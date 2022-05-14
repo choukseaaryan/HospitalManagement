@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".RegistrationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <!--Logo-->
+        <ImageView
+            android:id="@+id/logo"
+            android:src="@drawable/doctor"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/welcome_message" />
+
+        <!--Title-->
+        <TextView
+            android:id="@+id/title"
+            android:text="@string/welcome_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+        <!--Patient Registration Button-->
+        <Button
+            android:id="@+id/patientReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_reg"
+            android:textAllCaps="false"
+            android:textSize="17sp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_background"
+            />
+
+        <!--Doctor Registration Button-->
+        <Button
+            android:id="@+id/doctorReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/doc_reg"
+            android:textAllCaps="false"
+            android:textSize="17sp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_background"
+            />
+
+        <TextView
+            android:id="@+id/alreadyHaveAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/account_exists"
+            android:textAllCaps="false"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+</ScrollView>

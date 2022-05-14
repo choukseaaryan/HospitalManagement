@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "991182495476",
+    "project_id": "hospital-management-c293a",
+    "storage_bucket": "hospital-management-c293a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991182495476:android:bcdf6441c8f3bf203148a1",
+        "android_client_info": {
+          "package_name": "com.rastech.hospitalmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991182495476-reiuelpcl35mso893undfmm7jebm5vqi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rastech.hospitalmanagement",
+            "certificate_hash": "6bf808128dab6c9ac8c94235ff72438a52505f4e"
+          }
+        },
+        {
+          "client_id": "991182495476-4uipu429kmdtso134ig3pqef7tqikgkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn8H8jels_ltJteM4vnIkp-iR-6itIBn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991182495476-4uipu429kmdtso134ig3pqef7tqikgkj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
