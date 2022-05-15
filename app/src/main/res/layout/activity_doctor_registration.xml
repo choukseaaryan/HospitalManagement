@@ -4,63 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00BCD4"
     tools:context=".DoctorRegistrationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
-        <!--Logo-->
+
         <ImageView
             android:id="@+id/logo"
-            android:src="@drawable/doctor"
-            android:layout_gravity="center"
             android:layout_width="150dp"
-            android:layout_height="150dp" />
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/doctor"
+            app:srcCompat="@drawable/doctor" />
 
-        <!--Title-->
         <TextView
             android:id="@+id/title"
-            android:text="@string/doc_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textSize="25sp"
-            android:textStyle="bold"
             android:gravity="center"
-            android:textColor="@color/black"/>
+            android:text="@string/doc_reg"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <!--Profile Image-->
-<!--        <de.hdodenhof.circleimageview.CircleImageView-->
-<!--            android:id="@+id/profileImage"-->
-<!--            app:civ_border_width="2dp"-->
-<!--            app:civ_border_color="#FF000000"-->
-<!--            android:layout_width="120dp"-->
-<!--            android:layout_height="120dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginTop="40dp"-->
-<!--            android:src="@drawable/profile_image" />-->
+        <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+        <!--            android:id="@+id/profileImage"-->
+        <!--            app:civ_border_width="2dp"-->
+        <!--            app:civ_border_color="#FF000000"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginTop="40dp"-->
+        <!--            android:src="@drawable/profile_image" />-->
 
         <!--Registration Name-->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:boxStrokeColor="#fff"
             android:theme="@style/TextInputLayoutStyle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxStrokeColor="#fff"
             app:hintTextAppearance="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/regName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_profile"
-                android:hint="Enter Your Full Name"
                 android:autofillHints="name"
+                android:drawableStart="@drawable/ic_profile"
                 android:drawablePadding="10dp"
+                android:hint="Enter Your Full Name"
                 android:textColor="#000"
                 android:textColorHint="#000"
                 android:textSize="18sp" />
@@ -69,12 +70,12 @@
 
         <!--ID-->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:boxStrokeColor="#fff"
             android:theme="@style/TextInputLayoutStyle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxStrokeColor="#fff"
             app:hintTextAppearance="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -82,8 +83,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_number"
-                android:hint="Enter Your ID"
                 android:drawablePadding="10dp"
+                android:hint="Enter Your ID"
                 android:inputType="number"
                 android:textColor="#000"
                 android:textColorHint="#000"
@@ -97,11 +98,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:popupBackground="#fff"
-            android:entries="@array/timeframes"
+            android:layout_marginVertical="20dp"
             android:layout_marginStart="9dp"
-            android:layout_marginVertical="20dp"/>
+            android:entries="@array/timeframes"
+            android:gravity="center"
+            android:popupBackground="#fff" />
 
         <!--Department-->
         <Spinner
@@ -109,31 +110,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:popupBackground="#fff"
-            android:entries="@array/departments"
+            android:layout_marginVertical="20dp"
             android:layout_marginStart="9dp"
-            android:layout_marginVertical="20dp"/>
+            android:entries="@array/departments"
+            android:gravity="center"
+            android:popupBackground="#fff" />
 
         <!--Email field-->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:boxStrokeColor="#fff"
             android:theme="@style/TextInputLayoutStyle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxStrokeColor="#fff"
             app:hintTextAppearance="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/loginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_mail"
-                android:hint="Enter your email"
                 android:autofillHints="emailAddress"
-                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/ic_mail"
                 android:drawablePadding="10dp"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress"
                 android:textColor="#000"
                 android:textColorHint="#000"
                 android:textSize="18sp" />
@@ -142,12 +143,12 @@
 
         <!--Password field-->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:boxStrokeColor="#fff"
             android:theme="@style/TextInputLayoutStyle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxStrokeColor="#fff"
             app:hintTextAppearance="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -155,9 +156,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="10dp"
                 android:hint="Enter password"
                 android:inputType="textPassword"
-                android:drawablePadding="10dp"
                 android:textColor="#000"
                 android:textColorHint="#000"
                 android:textSize="18sp" />
@@ -165,22 +166,22 @@
 
         <!--Phone Number-->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:boxStrokeColor="#fff"
             android:theme="@style/TextInputLayoutStyle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:boxStrokeColor="#fff"
             app:hintTextAppearance="@color/colorPrimary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/regPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_phone"
-                android:hint="Enter Your Phone Number"
                 android:autofillHints="phone"
+                android:drawableStart="@drawable/ic_phone"
                 android:drawablePadding="10dp"
+                android:hint="Enter Your Phone Number"
                 android:inputType="phone"
                 android:textColor="#000"
                 android:textColorHint="#000"
@@ -193,28 +194,25 @@
             android:id="@+id/regButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"
             android:text="Register"
             android:textAllCaps="false"
-            android:textSize="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginHorizontal="70dp"
-            android:layout_gravity="center"
-            android:background="@drawable/button_background"
-            />
+            android:textSize="20dp" />
 
         <!--Login link-->
         <TextView
             android:id="@+id/alreadyHaveAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already Have An Account? Login"
-            android:textAllCaps="false"
             android:layout_marginVertical="20dp"
             android:gravity="center"
+            android:text="Already Have An Account? Login"
+            android:textAllCaps="false"
             android:textColor="#000"
-            android:textSize="17dp"/>
-
-
+            android:textSize="17dp" />
 
 
     </LinearLayout>
