@@ -10,6 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HospitalManagement">
         <activity
+            android:name=".DoctorPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PatientPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.AdminLoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_admin_login" />
+        <activity
+            android:name=".adminActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdmitRoomAssignActivity"
             android:exported="false" />
         <activity

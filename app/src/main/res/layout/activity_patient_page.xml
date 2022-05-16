@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2196F3"
-    android:padding="20dp"
-    tools:context=".RegistrationActivity">
+    tools:context=".PatientPageActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,45 +19,43 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:contentDescription="@string/welcome_message"
-            android:src="@drawable/ic_health"
-            app:srcCompat="@drawable/ic_health" />
+            android:src="@drawable/ic_profile"
+            app:srcCompat="@drawable/ic_profile" />
 
         <!--Title-->
+
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="@string/welcome_message"
+            android:text="Welcome to the Hospital"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <!--Patient Registration Button-->
-
-        <!--Doctor Registration Button-->
         <Button
-            android:id="@+id/patientReg"
-            android:layout_width="match_parent"
+            android:id="@+id/bookAppointPatient"
+            android:layout_width="326dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
             android:background="@drawable/button_background"
-            android:text="@string/patient_reg"
+            android:text="Book Appointment"
             android:textAllCaps="false"
             android:textSize="17sp" />
 
-        <TextView
-            android:id="@+id/alreadyHaveAccount"
-            android:layout_width="match_parent"
+
+        <Button
+            android:id="@+id/logoutPatient"
+            android:layout_width="326dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="@string/account_exists"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/button_background"
+            android:text="Logout"
             android:textAllCaps="false"
-            android:textColor="#000"
             android:textSize="17sp" />
-
     </LinearLayout>
 </ScrollView>

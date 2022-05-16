@@ -8,9 +8,14 @@
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_patient_registration.xml" value="0.16" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_registration.xml" value="0.2" />
+        <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_admin.xml" value="0.14356884057971014" />
+        <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_admin_login.xml" value="0.13858695652173914" />
+        <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_admin_login2.xml" value="0.22" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_admit_room_assign.xml" value="0.22" />
+        <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_doctor_page.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_doctor_registration.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_patient_page.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_patient_registration.xml" value="0.11820652173913043" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_registration.xml" value="0.17552083333333332" />
       </map>

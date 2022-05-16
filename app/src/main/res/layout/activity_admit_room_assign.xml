@@ -1,9 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AdmitRoomAssignActivity">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!--Logo-->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:src="@drawable/ic_housing"
+            app:srcCompat="@drawable/ic_housing" />
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Room Assignment"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextInputLayoutStyle"
+                app:boxStrokeColor="#fff"
+                app:hintTextAppearance="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/roomid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Room"
+                    android:drawableStart="@drawable/ic_housing"
+                    android:drawablePadding="10dp"
+                    android:hint="Room Id: "
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:theme="@style/TextInputLayoutStyle"
+                app:boxStrokeColor="#fff"
+                app:hintTextAppearance="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/patientid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Patient"
+                    android:drawableStart="@drawable/ic_personalcare"
+                    android:drawablePadding="10dp"
+                    android:hint="Patient Id: "
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--Password field-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:theme="@style/TextInputLayoutStyle"
+                app:boxStrokeColor="#fff"
+                app:hintTextAppearance="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/doctorid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Doctor"
+                    android:drawableStart="@drawable/ic_profile"
+                    android:drawablePadding="10dp"
+                    android:hint="Doctor Id: "
+                    android:inputType="number"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/totalDays"
+                android:layout_width="378dp"
+                android:layout_height="72dp"
+                android:autofillHints="For How Many Days?"
+                android:drawableStart="@drawable/ic_health"
+                android:drawablePadding="10dp"
+                android:hint="Days:"
+                android:inputType="number"
+                android:textColor="#000"
+                android:textColorHint="#000"
+                android:textSize="18sp" />
+        <!--Assign Button-->
+            <Button
+                android:id="@+id/assignButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:text="Assign"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+            <Button
+                android:id="@+id/updatedata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:text="Update Room"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+            <Button
+                android:id="@+id/dischargePatient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:text="Discharge"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+            <Button
+                android:id="@+id/viewbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:text="View"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+            <Button
+                android:id="@+id/viewalldata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="70dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:text="View All"
+                android:textAllCaps="false"
+                android:textSize="20dp" />
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class RegistrationActivity extends AppCompatActivity {
 
     private TextView alreadyHaveAccount;
-    private Button patientReg, doctorReg;
+    private Button patientReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +36,5 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-        doctorReg = findViewById(R.id.doctorReg);
-        doctorReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(RegistrationActivity.this, DoctorRegistrationActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
