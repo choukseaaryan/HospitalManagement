@@ -50,7 +50,7 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
 //        });
     }
     public void onClick(View view) {
-        // Inserting a record to the Student table
+        // Inserting a record to the Room table
         if (view == assignbutton) {
             // Checking for empty fields
             if (roomid.getText().toString().trim().length() == 0 ||
@@ -67,7 +67,7 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
         }
         if(view==Update)
         {
-            // Checking for empty roll number
+            // Checking for empty ID
             if(roomid.getText().toString().trim().length()==0)
             {
                 showMessage("Error", "Please enter roomid");
@@ -86,7 +86,7 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
         }
         if(view==Discharge)
         {
-            // Checking for empty roll number
+            // Checking for empty Room ID
             if(roomid.getText().toString().trim().length()==0)
             {
                 showMessage("Error", "Please enter RoomId");
@@ -100,14 +100,14 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
             }
             else
             {
-                showMessage("Error", "Invalid Roomid");
+                showMessage("Error", "Invalid RoomId");
             }
             clearText();
         }
-        // Display a record from the Student table
+        // Display a record from the Room table
         if(view==View)
         {
-            // Checking for empty roll number
+            // Checking for empty Room ID
             if(roomid.getText().toString().trim().length()==0)
             {
                 showMessage("Error", "Please enter RoomID");

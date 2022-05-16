@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,25 +15,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
 
 public class PatientRegistrationActivity extends AppCompatActivity {
 
     private TextView alreadyHaveAccount;
     private TextInputEditText regName, regID, loginEmail, loginPassword, regPhoneNumber;
     private Button regButton;
-
-    private FirebaseAuth mAuth;
-    private DatabaseReference userDatabaseRef;
-    private ProgressDialog loader;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +45,8 @@ public class PatientRegistrationActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.loginPassword);
         regButton = findViewById(R.id.regButton);
 
-        loader = new ProgressDialog(this);
-        mAuth = FirebaseAuth.getInstance();
+        db=openOrCreateDatabase("PatientData", Context.MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS PatientData(regName string,regID integer,regPhoneNumber integer,loginEmail email, loginPassword password);");
 
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,51 +83,12 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 }
 
                 else {
-                    loader.setMessage("Registration in progress...");
-                    loader.setCanceledOnTouchOutside(false);
-                    loader.show();
-
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful()) {
-                                String error = task.getException().toString();
-                                Toast.makeText(PatientRegistrationActivity.this, "Error Occured: " + error, Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                String currentUserId = mAuth.getCurrentUser().getUid();
-                                userDatabaseRef = FirebaseDatabase.getInstance().getReference().child("users").child(currentUserId);
-                                HashMap userInfo = new HashMap();
-
-                                userInfo.put("name", regName);
-                                userInfo.put("idNumber", regID);
-                                userInfo.put("phone", regPhoneNumber);
-                                userInfo.put("email", loginEmail);
-                                userInfo.put("password", loginPassword);
-                                userInfo.put("type", "patient");
-
-                                userDatabaseRef.updateChildren(userInfo).addOnCompleteListener(new OnCompleteListener() {
-                                    @Override
-                                    public void onComplete(@NonNull Task task) {
-                                        if(task.isSuccessful()) {
-                                            Toast.makeText(PatientRegistrationActivity.this, "Details added successfully", Toast.LENGTH_SHORT).show();
-                                        }
-                                        else{
-                                            Toast.makeText(PatientRegistrationActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                                        }
-                                        finish();
-                                    }
-                                });
-
-                            }
-                        }
-                    });
-                    Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish();
-                    loader.dismiss();
+                    db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + regID.getText() +
+                            "','" + regPhoneNumber.getText() + "','" + loginEmail.getText() + "','" + loginPassword.getText() + "');");
                 }
-
+                Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
