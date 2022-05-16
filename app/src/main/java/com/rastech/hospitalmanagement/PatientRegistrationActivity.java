@@ -93,5 +93,6 @@ public class PatientRegistrationActivity extends AppCompatActivity {
         });
 
 
+
     }
 }
