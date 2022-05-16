@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
-
+import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -85,14 +85,30 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 else {
                     db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + regID.getText() +
                             "','" + regPhoneNumber.getText() + "','" + loginEmail.getText() + "','" + loginPassword.getText() + "');");
+                    showMessage("Success", "Registration Successful");
+                    clearText();
                 }
                 Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
+    }
 
-
-
+    public void showMessage(String title,String message)
+    {
+        Builder builder=new Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
+    public void clearText()
+    {
+        regName.setText("");
+        regID.setText("");
+        loginEmail.setText("");
+        loginPassword.setText("");
+        regPhoneNumber.setText("");
     }
 }
