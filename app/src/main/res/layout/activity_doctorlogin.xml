@@ -33,16 +33,15 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
-
+        <!--Title-->
         <TextView
-            android:id="@+id/title7"
+            android:id="@+id/title5"
             android:layout_width="match_parent"
-            android:layout_height="76dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Patient Login"
-            android:textAllCaps="false"
-            android:textColor="#000"
-            android:textSize="17dp" />
+            android:text="Doctor Login"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,40 +110,7 @@
                 android:text="Sign In"
                 android:textAllCaps="false" />
 
-            <!--Register link-->
-            <TextView
-                android:id="@+id/noAccountQuestion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="Don't have an account? Register here"
-                android:textAllCaps="false"
-                android:textColor="#000"
-                android:textSize="17dp" />
-            <!--Register link-->
-            <TextView
-                android:id="@+id/dotoraccount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="Doctor Login"
-                android:textAllCaps="false"
-                android:textColor="#000"
-                android:textSize="17dp" />
 
-            <!--Admin Login link-->
-            <TextView
-                android:id="@+id/loginAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:layout_marginTop="180dp"
-                android:gravity="center"
-                android:text="Admin Login"
-                android:textAllCaps="false"
-                android:textColor="#000"
-                android:textSize="17dp" />
 
         </LinearLayout>
 
