@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
                 startActivity(intent);
             }
         });
-        doctoraccount = findViewById(R.id.dotoraccount);
+        doctoraccount = findViewById(R.id.doctoraccount);
         doctoraccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,14 +82,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
             startActivity(intent);
             clearText();
         }}
-    public void showMessage(String title,String message)
-    {
-        Builder builder=new Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
+
     public void clearText()
     {
         loginEmail.setText("");

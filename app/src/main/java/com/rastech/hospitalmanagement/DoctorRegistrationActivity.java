@@ -92,14 +92,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
             }
         }
     }
-    public void showMessage(String title,String message)
-    {
-        Builder builder=new Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
+
     public void clearText()
     {
         Docname.setText("");

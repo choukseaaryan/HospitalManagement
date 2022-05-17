@@ -43,19 +43,4 @@ public class AdminLoginActivity extends AppCompatActivity {
             });
 
     }
-
-    public void showMessage(String title,String message)
-    {
-        Builder builder=new Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
-    public void clearText()
-    {
-        adminloginEmail.setText("");
-        adminloginPassword.setText("");
-        adminloginEmail.requestFocus();
-    }
 }

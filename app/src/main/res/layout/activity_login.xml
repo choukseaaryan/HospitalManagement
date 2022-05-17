@@ -124,7 +124,7 @@
                 android:textSize="17dp" />
             <!--Register link-->
             <TextView
-                android:id="@+id/dotoraccount"
+                android:id="@+id/doctoraccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -139,7 +139,7 @@
                 android:id="@+id/loginAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
-                android:layout_marginTop="180dp"
+                android:layout_marginTop="50dp"
                 android:gravity="center"
                 android:text="Admin Login"
                 android:textAllCaps="false"
