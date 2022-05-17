@@ -200,6 +200,17 @@
             android:text="Register"
             android:textAllCaps="false"
             android:textSize="20dp" />
+        <Button
+            android:id="@+id/viewbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"
+            android:text="View"
+            android:textAllCaps="false"
+            android:textSize="20dp" />
 
         <!--Login link-->
         <TextView

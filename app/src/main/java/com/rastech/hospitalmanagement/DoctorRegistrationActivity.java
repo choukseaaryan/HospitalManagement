@@ -18,7 +18,7 @@ import android.database.Cursor;
 public class DoctorRegistrationActivity extends AppCompatActivity implements  OnClickListener {
 
     private TextView alreadyHaveAccount;
-    Button regButton;
+    Button regButton,View;
     EditText Docname,docID,docdesig,loginEmail,loginPassword,regPhoneNumber;
     SQLiteDatabase db1;
 
@@ -34,6 +34,8 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         regPhoneNumber = (EditText)findViewById(R.id.regPhoneNumber);
         regButton = (Button)findViewById(R.id.regButton);
         regButton.setOnClickListener(this);
+        View = (Button)findViewById(R.id.viewbutton);
+        View.setOnClickListener(this);
         db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname VARCHAR,docID integer,docdesig VARCHAR,loginEmail VARCHAR,loginPassword VARCHAR,regPhoneNumber integer);");
 
@@ -64,6 +66,29 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
                     "','" + loginEmail.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
             showMessage("Success", "Record added");
             clearText();
+        }
+        if(view==View)
+        {
+            // Checking for empty Room ID
+            if(docID.getText().toString().trim().length()==0)
+            {
+                showMessage("Error", "Please enter Doctor ID");
+                return;
+            }
+            Cursor c=db1.rawQuery("SELECT * FROM Docdata WHERE docID='"+docID.getText()+"'", null);
+            if(c.moveToFirst())
+            {
+                Docname.setText(c.getString(0));
+                docdesig.setText(c.getString(2));
+                loginEmail.setText(c.getString(3));
+                loginPassword.setText(c.getString(4));
+                regPhoneNumber.setText(c.getString(5));
+            }
+            else
+            {
+                showMessage("Error", "Invalid Doctor ID");
+                clearText();
+            }
         }
     }
     public void showMessage(String title,String message)
