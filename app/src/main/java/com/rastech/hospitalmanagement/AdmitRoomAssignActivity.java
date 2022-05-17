@@ -37,7 +37,7 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
         Update.setOnClickListener(this);
         ViewAll.setOnClickListener(this);
         View.setOnClickListener(this);
-        db=openOrCreateDatabase("RoomDB", Context.MODE_PRIVATE, null);
+        db=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS roomdata(roomid integer,patientid integer,doctorid integer,totaldays integer);");
 
 //        assignButton = findViewById(R.id.assignButton);
@@ -119,7 +119,6 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
                 patientid.setText(c.getString(1));
                 doctorid.setText(c.getString(2));
                 totaldays.setText(c.getString(3));
-
             }
             else
             {

@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
     android:padding="20dp"
     tools:context=".RegistrationActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2196F3"
         android:orientation="vertical">
         <!--Logo-->
         <ImageView
@@ -19,8 +17,9 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:contentDescription="Home Page"
-            android:src="@drawable/ic_health"
-            app:srcCompat="@drawable/ic_housing" />
+            android:src="@drawable/logo"
+            app:srcCompat="@drawable/logo"
+            android:layout_marginBottom="10dp" />
 
         <!--Title-->
         <TextView

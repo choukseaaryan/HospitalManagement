@@ -18,8 +18,9 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:contentDescription="@string/welcome_message"
-            android:src="@drawable/ic_health"
-            app:srcCompat="@drawable/ic_health" />
+            android:src="@drawable/logo"
+            app:srcCompat="@drawable/logo"
+            android:layout_marginBottom="10dp" />
 
         <!--Title-->
         <TextView

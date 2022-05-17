@@ -1,10 +1,7 @@
 package com.rastech.hospitalmanagement;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
-
+import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,8 +10,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.android.material.textfield.TextInputEditText;
 
 public class PatientRegistrationActivity extends AppCompatActivity {
@@ -45,7 +40,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.loginPassword);
         regButton = findViewById(R.id.regButton);
 
-        db=openOrCreateDatabase("PatientData", Context.MODE_PRIVATE, null);
+        db=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS PatientData(regName string,regID integer,regPhoneNumber integer,loginEmail email, loginPassword password);");
 
         regButton.setOnClickListener(new View.OnClickListener() {
@@ -88,10 +83,26 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish();
+                showMessage("Success", "Registration Successful");
+                clearText();
             }
         });
+    }
 
-
+    public void showMessage(String title,String message)
+    {
+        Builder builder=new Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
+    public void clearText()
+    {
+        regName.setText("");
+        regID.setText("");
+        loginEmail.setText("");
+        loginPassword.setText("");
+        regPhoneNumber.setText("");
     }
 }
