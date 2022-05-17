@@ -24,6 +24,7 @@
         <item>Cardiologist</item>
         <item>Dermatologist</item>
     </string-array>
+
     <string name="title_activity_admin_login">AdminLoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

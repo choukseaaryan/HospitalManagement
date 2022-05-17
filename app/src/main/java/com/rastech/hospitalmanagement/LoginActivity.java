@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements OnClickListener {
 
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
             // Checking for empty fields
             if (loginEmail.getText().toString().trim().length() == 0 ||
                     loginpassword.getText().toString().trim().length() == 0) {
-                showMessage("Error", "Please enter all values");
+                Toast.makeText(LoginActivity.this, "Please enter all values", Toast.LENGTH_SHORT).show();
                 return;
             }
             String s1="",s2="";
@@ -65,10 +66,10 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
             }
             if(c.getCount()==0 || !loginEmail.getText().toString().equals(s1) ||!loginpassword.getText().toString().equals(s2) )
             {
-                showMessage("Error ","No Record Found");
+                Toast.makeText(LoginActivity.this, "No record found", Toast.LENGTH_SHORT).show();
                 return;
             }
-            showMessage("Success", "Login Successfully");
+            Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this, PatientPageActivity.class);
             startActivity(intent);
             clearText();

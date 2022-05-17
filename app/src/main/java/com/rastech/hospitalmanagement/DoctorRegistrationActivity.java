@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
 import android.database.Cursor;
+import android.widget.Toast;
 
 public class DoctorRegistrationActivity extends AppCompatActivity implements  OnClickListener {
 
@@ -57,12 +58,12 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
                     docdesig.getText().toString().trim().length() == 0 ||
                     loginPassword.getText().toString().trim().length() == 0 ||
                     regPhoneNumber.getText().toString().trim().length() == 0) {
-                showMessage("Error", "Please enter all values");
+                Toast.makeText(DoctorRegistrationActivity.this, "Please enter all values", Toast.LENGTH_SHORT).show();
                 return;
             }
             db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + docID.getText() + "','" + loginEmail.getText() +
                     "','" + docdesig.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
-            showMessage("Success", "Record added");
+            Toast.makeText(DoctorRegistrationActivity.this, "Record added", Toast.LENGTH_SHORT).show();
             clearText();
         }
     }

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClickListener {
 //    private Button assignButton;
@@ -57,12 +58,12 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
                     patientid.getText().toString().trim().length() == 0 ||
                     doctorid.getText().toString().trim().length() == 0 ||
                     totaldays.getText().toString().trim().length() == 0) {
-                showMessage("Error", "Please enter all values");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Please enter all values", Toast.LENGTH_SHORT).show();
                 return;
             }
             db.execSQL("INSERT INTO roomdata VALUES('" + roomid.getText() + "','" + patientid.getText() +
                     "','" + doctorid.getText() + "','" + totaldays.getText() + "');");
-            showMessage("Success", "Record added");
+            Toast.makeText(AdmitRoomAssignActivity.this, "Record added", Toast.LENGTH_SHORT).show();
             clearText();
         }
         if(view==Update)
@@ -70,17 +71,17 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
             // Checking for empty ID
             if(roomid.getText().toString().trim().length()==0)
             {
-                showMessage("Error", "Please enter roomid");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Please enter Room ID", Toast.LENGTH_SHORT).show();
                 return;
             }
             Cursor c=db.rawQuery("SELECT * FROM roomdata WHERE roomid='"+roomid.getText()+"'", null);
             if(c.moveToFirst()) {
                 db.execSQL("UPDATE roomdata SET patientid='" + patientid.getText() + "',doctorid='" + doctorid.getText() + "',totaldays='" + totaldays.getText()+
                         "' WHERE rollno='"+roomid.getText()+"');");
-                showMessage("Success", "Record Modified");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Record Modified", Toast.LENGTH_SHORT).show();
             }
             else {
-                showMessage("Error", "Invalid RoomID");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Invalid Room ID", Toast.LENGTH_SHORT).show();
             }
             clearText();
         }
@@ -89,18 +90,18 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
             // Checking for empty Room ID
             if(roomid.getText().toString().trim().length()==0)
             {
-                showMessage("Error", "Please enter RoomId");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Please enter Room ID", Toast.LENGTH_SHORT).show();
                 return;
             }
             Cursor c=db.rawQuery("SELECT * FROM roomdata WHERE roomid='"+roomid.getText()+"'", null);
             if(c.moveToFirst())
             {
                 db.execSQL("DELETE FROM roomdata WHERE roomid='"+roomid.getText()+"'");
-                showMessage("Success", "Record Deleted");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Record Deleted", Toast.LENGTH_SHORT).show();
             }
             else
             {
-                showMessage("Error", "Invalid RoomId");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Invalid Room ID", Toast.LENGTH_SHORT).show();
             }
             clearText();
         }
@@ -110,7 +111,7 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
             // Checking for empty Room ID
             if(roomid.getText().toString().trim().length()==0)
             {
-                showMessage("Error", "Please enter RoomID");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Please enter Room ID", Toast.LENGTH_SHORT).show();
                 return;
             }
             Cursor c=db.rawQuery("SELECT * FROM roomdata WHERE roomid='"+roomid.getText()+"'", null);
@@ -122,8 +123,7 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
             }
             else
             {
-                showMessage("Error", "Invalid RoomID");
-                clearText();
+                Toast.makeText(AdmitRoomAssignActivity.this, "Invalid Room ID", Toast.LENGTH_SHORT).show();
             }
         }
         // Displaying all the records

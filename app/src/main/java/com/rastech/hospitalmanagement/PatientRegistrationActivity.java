@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.textfield.TextInputEditText;
 
 public class PatientRegistrationActivity extends AppCompatActivity {
@@ -83,26 +85,8 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
-                showMessage("Success", "Registration Successful");
-                clearText();
+                Toast.makeText(PatientRegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    public void showMessage(String title,String message)
-    {
-        Builder builder=new Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
-    public void clearText()
-    {
-        regName.setText("");
-        regID.setText("");
-        loginEmail.setText("");
-        loginPassword.setText("");
-        regPhoneNumber.setText("");
     }
 }

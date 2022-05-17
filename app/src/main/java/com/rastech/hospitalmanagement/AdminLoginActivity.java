@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AdminLoginActivity extends AppCompatActivity {
 
@@ -35,8 +36,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        showMessage("Error", "Invalid Credintials!");
-                        clearText();
+                        Toast.makeText(AdminLoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
 
                 }
