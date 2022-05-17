@@ -80,12 +80,11 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 else {
                     db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + regID.getText() +
                             "','" + regPhoneNumber.getText() + "','" + loginEmail.getText() + "','" + loginPassword.getText() + "');");
-                    showMessage("Success", "Registration Successful");
-                    clearText();
                 }
                 Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish();
+                showMessage("Success", "Registration Successful");
+                clearText();
             }
         });
     }
