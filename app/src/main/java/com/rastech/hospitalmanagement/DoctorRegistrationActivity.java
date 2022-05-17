@@ -63,15 +63,9 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
                 Toast.makeText(DoctorRegistrationActivity.this, "Please enter all values", Toast.LENGTH_SHORT).show();
                 return;
             }
-<<<<<<< HEAD
-            db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + docID.getText() + "','" + loginEmail.getText() +
-                    "','" + docdesig.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
-            Toast.makeText(DoctorRegistrationActivity.this, "Record added", Toast.LENGTH_SHORT).show();
-=======
             db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + docID.getText() + "','" + docdesig.getText() +
                     "','" + loginEmail.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
-            showMessage("Success", "Record added");
->>>>>>> 9b3dfc3f34a6b032df2110b583b3f77918839f06
+            Toast.makeText(DoctorRegistrationActivity.this, "Record added", Toast.LENGTH_SHORT).show();
             clearText();
         }
         if(view==View)
@@ -79,7 +73,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
             // Checking for empty Room ID
             if(docID.getText().toString().trim().length()==0)
             {
-                showMessage("Error", "Please enter Doctor ID");
+                Toast.makeText(DoctorRegistrationActivity.this, "Please enter Doctor ID", Toast.LENGTH_SHORT).show();
                 return;
             }
             Cursor c=db1.rawQuery("SELECT * FROM Docdata WHERE docID='"+docID.getText()+"'", null);
@@ -93,7 +87,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
             }
             else
             {
-                showMessage("Error", "Invalid Doctor ID");
+                Toast.makeText(DoctorRegistrationActivity.this, "Invalid Doctor ID", Toast.LENGTH_SHORT).show();
                 clearText();
             }
         }
