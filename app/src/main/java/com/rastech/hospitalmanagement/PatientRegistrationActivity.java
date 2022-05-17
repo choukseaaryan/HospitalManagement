@@ -45,7 +45,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.loginPassword);
         regButton = findViewById(R.id.regButton);
 
-        db=openOrCreateDatabase("PatientData", Context.MODE_PRIVATE, null);
+        db=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS PatientData(regName string,regID integer,regPhoneNumber integer,loginEmail email, loginPassword password);");
 
         regButton.setOnClickListener(new View.OnClickListener() {

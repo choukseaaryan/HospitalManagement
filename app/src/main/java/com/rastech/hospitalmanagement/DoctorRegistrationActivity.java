@@ -34,7 +34,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         regPhoneNumber = (EditText)findViewById(R.id.regPhoneNumber);
         regButton = (Button)findViewById(R.id.regButton);
         regButton.setOnClickListener(this);
-        db1=openOrCreateDatabase("Docinfo", Context.MODE_PRIVATE, null);
+        db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname VARCHAR,docID integer,docdesig VARCHAR,loginEmail VARCHAR,loginPassword VARCHAR,regPhoneNumber integer);");
 
         alreadyHaveAccount = findViewById(R.id.alreadyHaveAccount);
