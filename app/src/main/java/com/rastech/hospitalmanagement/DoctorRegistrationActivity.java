@@ -53,15 +53,15 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
             // Checking for empty fields
             if (Docname.getText().toString().trim().length() == 0 ||
                     docID.getText().toString().trim().length() == 0 ||
-                    loginEmail.getText().toString().trim().length() == 0 ||
                     docdesig.getText().toString().trim().length() == 0 ||
+                    loginEmail.getText().toString().trim().length() == 0 ||
                     loginPassword.getText().toString().trim().length() == 0 ||
                     regPhoneNumber.getText().toString().trim().length() == 0) {
                 showMessage("Error", "Please enter all values");
                 return;
             }
-            db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + docID.getText() + "','" + loginEmail.getText() +
-                    "','" + docdesig.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
+            db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + docID.getText() + "','" + docdesig.getText() +
+                    "','" + loginEmail.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
             showMessage("Success", "Record added");
             clearText();
         }
@@ -78,8 +78,8 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
     {
         Docname.setText("");
         docID.setText("");
-        loginEmail.setText("");
         docdesig.setText("");
+        loginEmail.setText("");
         loginPassword.setText("");
         regPhoneNumber.setText("");
     }
