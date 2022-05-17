@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HospitalManagement">
         <activity
+            android:name=".doctorloginActivity"
+            android:exported="false" />
+        <activity
             android:name=".DoctorPageActivity"
             android:exported="false" />
         <activity

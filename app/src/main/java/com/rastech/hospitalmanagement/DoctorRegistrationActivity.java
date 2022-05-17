@@ -37,13 +37,13 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         View = (Button)findViewById(R.id.viewbutton);
         View.setOnClickListener(this);
         db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
-        db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname VARCHAR,docID integer,docdesig VARCHAR,loginEmail VARCHAR,loginPassword VARCHAR,regPhoneNumber integer);");
+        db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname string,docID integer,docdesig string,loginEmail email,loginPassword string,regPhoneNumber integer);");
 
         alreadyHaveAccount = findViewById(R.id.alreadyHaveAccount);
         alreadyHaveAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DoctorRegistrationActivity.this, LoginActivity.class);
+                Intent intent = new Intent(DoctorRegistrationActivity.this, doctorloginActivity.class);
                 startActivity(intent);
             }
         });
