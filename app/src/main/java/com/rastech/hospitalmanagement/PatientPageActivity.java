@@ -22,5 +22,12 @@ public class PatientPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_page);
         logoutPatient = (Button)findViewById(R.id.logoutPatient);
+        logoutPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PatientPageActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
