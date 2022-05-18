@@ -2,7 +2,9 @@ package com.rastech.hospitalmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View.OnClickListener;
@@ -111,13 +113,15 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
             StringBuffer buffer=new StringBuffer();
             while(c.moveToNext())
             {
-                buffer.append("Docname: "+c.getString(0)+"\n");
-                buffer.append("DocId: "+c.getString(1)+"\n");
-                buffer.append("loginEmail: "+c.getString(3)+"\n");
-                buffer.append("LoginPassword: "+c.getString(4)+"\n\n");
+                buffer.append("Name: "+c.getString(0)+"\n");
+                buffer.append("Id: "+c.getString(1)+"\n");
+                buffer.append("Designation: "+c.getString(2)+"\n");
+                buffer.append("Email: "+c.getString(3)+"\n");
+                buffer.append("Password "+c.getString(4)+"\n");
+                buffer.append("Phone Number: "+c.getString(5)+"\n\n");
 
             }
-            showMessage("Doctor Details", buffer.toString());
+            showMessage1("Doctor Data", buffer.toString());
         }
     }
 
@@ -127,6 +131,23 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);
+        builder.show();
+    }
+    public void showMessage1(String title,String message)
+    {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        if(!message.equals("No records found")) {
+            builder.setPositiveButton("Delete All", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    db1.execSQL("DELETE FROM Docdata");
+                    Toast.makeText(DoctorRegistrationActivity.this, "Record Deleted", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
         builder.show();
     }
     public void clearText()
