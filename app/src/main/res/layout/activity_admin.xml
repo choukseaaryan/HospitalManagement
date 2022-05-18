@@ -34,6 +34,17 @@
         android:textStyle="bold" />
 
         <Button
+            android:id="@+id/searchDoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button_background"
+            android:text="Get Details Of A Doctor"
+            android:textAllCaps="false"
+            android:textSize="17sp" />
+
+        <Button
             android:id="@+id/doctorReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,13 +56,13 @@
             android:textSize="17sp" />
 
         <Button
-            android:id="@+id/assignRo"
+            android:id="@+id/doctorDataButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:background="@drawable/button_background"
-            android:text="Assign Room"
+            android:text="Doctor Data"
             android:textAllCaps="false"
             android:textSize="17sp" />
 
@@ -63,6 +74,17 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/button_background"
             android:text="Patient Data"
+            android:textAllCaps="false"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/assignRo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button_background"
+            android:text="Assign Room"
             android:textAllCaps="false"
             android:textSize="17sp" />
     </LinearLayout>

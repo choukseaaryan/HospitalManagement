@@ -22,9 +22,8 @@ import java.util.UUID;
 
 public class DoctorRegistrationActivity extends AppCompatActivity implements  OnClickListener {
 
-    private TextView alreadyHaveAccount;
-    Button regButton,View,ViewAll;
-    EditText Docname,docID,docdesig,loginEmail,loginPassword,regPhoneNumber;
+    Button regButton;
+    EditText Docname,docdesig,loginEmail,loginPassword,regPhoneNumber;
     SQLiteDatabase db1;
 
     @Override
@@ -32,17 +31,12 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_registration);
         Docname = (EditText)findViewById(R.id.Docname);
-//        docID = (EditText)findViewById(R.id.docID);
         docdesig = (EditText)findViewById(R.id.docdesig);
         loginEmail = (EditText)findViewById(R.id.loginEmail);
         loginPassword = (EditText)findViewById(R.id.loginPassword);
         regPhoneNumber = (EditText)findViewById(R.id.regPhoneNumber);
         regButton = (Button)findViewById(R.id.regButton);
         regButton.setOnClickListener(this);
-        View = (Button)findViewById(R.id.viewbutton);
-        View.setOnClickListener(this);
-        ViewAll = (Button)findViewById(R.id.viewallbutton);
-        ViewAll.setOnClickListener(this);
         db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname string,docID integer,docdesig string,loginEmail email,loginPassword string,regPhoneNumber integer);");
 
@@ -61,7 +55,6 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         if (view == regButton) {
             // Checking for empty fields
             if (Docname.getText().toString().trim().length() == 0 ||
-//                    docID.getText().toString().trim().length() == 0 ||
                     docdesig.getText().toString().trim().length() == 0 ||
                     loginEmail.getText().toString().trim().length() == 0 ||
                     loginPassword.getText().toString().trim().length() == 0 ||
@@ -79,50 +72,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
             Toast.makeText(DoctorRegistrationActivity.this, "Record added", Toast.LENGTH_SHORT).show();
             clearText();
         }
-        if(view==View)
-        {
-            // Checking for empty Room ID
-            if(docID.getText().toString().trim().length()==0)
-            {
-                Toast.makeText(DoctorRegistrationActivity.this, "Please enter Doctor ID", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            Cursor c=db1.rawQuery("SELECT * FROM Docdata WHERE docID='"+docID.getText()+"'", null);
-            if(c.moveToFirst())
-            {
-                Docname.setText(c.getString(0));
-                docdesig.setText(c.getString(2));
-                loginEmail.setText(c.getString(3));
-                loginPassword.setText(c.getString(4));
-                regPhoneNumber.setText(c.getString(5));
-            }
-            else
-            {
-                Toast.makeText(DoctorRegistrationActivity.this, "Invalid Doctor ID", Toast.LENGTH_SHORT).show();
-                clearText();
-            }
-        }
-        if(view==ViewAll)
-        {
-            Cursor c=db1.rawQuery("SELECT * FROM Docdata", null);
-            if(c.getCount()==0)
-            {
-                showMessage("Error", "No records found");
-                return;
-            }
-            StringBuffer buffer=new StringBuffer();
-            while(c.moveToNext())
-            {
-                buffer.append("Name: "+c.getString(0)+"\n");
-                buffer.append("Id: "+c.getString(1)+"\n");
-                buffer.append("Designation: "+c.getString(2)+"\n");
-                buffer.append("Email: "+c.getString(3)+"\n");
-                buffer.append("Password "+c.getString(4)+"\n");
-                buffer.append("Phone Number: "+c.getString(5)+"\n\n");
 
-            }
-            showMessage1("Doctor Data", buffer.toString());
-        }
     }
 
     public void showMessage(String title,String message)
@@ -133,30 +83,14 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         builder.setMessage(message);
         builder.show();
     }
-    public void showMessage1(String title,String message)
-    {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        if(!message.equals("No records found")) {
-            builder.setPositiveButton("Delete All", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    db1.execSQL("DELETE FROM Docdata");
-                    Toast.makeText(DoctorRegistrationActivity.this, "Record Deleted", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-        builder.show();
-    }
+
     public void clearText()
     {
-        docdesig.setText("");
-        docID.setText("");
         Docname.setText("");
+        docdesig.setText("");
         loginEmail.setText("");
         loginPassword.setText("");
+        regPhoneNumber.setText("");
         Docname.requestFocus();
     }
 }
