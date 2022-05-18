@@ -142,8 +142,8 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
             while(c.moveToNext())
             {
                 buffer.append("RoomId: "+c.getString(0)+"\n");
-                buffer.append("PatienId: "+c.getString(1)+"\n");
-                buffer.append("DoctorId: "+c.getString(2)+"\n");
+                buffer.append("Patient Id: "+c.getString(1)+"\n");
+                buffer.append("Doctor Id: "+c.getString(2)+"\n");
                 buffer.append("TotalDays: "+c.getString(3)+"\n\n");
 
             }

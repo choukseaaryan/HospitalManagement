@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener 
         });
     }
     public void onClick(View view) {
-        // Inserting a record to the Room table
+
         if (view == loginButton) {
             // Checking for empty fields
             if (loginEmail.getText().toString().trim().length() == 0 ||

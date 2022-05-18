@@ -15,11 +15,13 @@
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_admit_room_assign.xml" value="0.2" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_doctor_page.xml" value="0.18313689936536717" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_doctor_registration.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_doctorlogin.xml" value="0.18313689936536717" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_patient_page.xml" value="0.18313689936536717" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_patient_registration.xml" value="0.16" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/layout/activity_registration.xml" value="0.2" />
         <entry key="..\:/Users/aarya/AndroidStudioProjects/HospitalManagement/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.116" />
+<<<<<<< HEAD
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_admin.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_admin_login2.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_admit_room_assign.xml" value="0.17552083333333332" />
@@ -28,6 +30,8 @@
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_patient_page.xml" value="0.1" />
         <entry key="..\:/Users/rs3523/AndroidStudioProjects/Room/HospitalManagement/app/src/main/res/layout/activity_patient_registration.xml" value="0.17552083333333332" />
+=======
+>>>>>>> 557406d55505429fdbcb0f3542bf8130233acdde
       </map>
     </option>
   </component>
