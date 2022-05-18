@@ -85,7 +85,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 }
 
                 else {
-                    db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + regID.getText() +
+                    db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + count +
                             "','" + regPhoneNumber.getText() + "','" + loginEmail.getText() + "','" + loginPassword.getText() + "');");
                     showMessage("ID","Your Id is "+count);
                 }
