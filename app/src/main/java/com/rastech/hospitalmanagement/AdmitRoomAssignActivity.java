@@ -75,10 +75,13 @@ public class AdmitRoomAssignActivity extends AppCompatActivity implements OnClic
                 return;
             }
             Cursor c=db.rawQuery("SELECT * FROM roomdata WHERE roomid='"+roomid.getText()+"'", null);
-            if(c.moveToFirst()) {
-                db.execSQL("UPDATE roomdata SET patientid='" + patientid.getText() + "',doctorid='" + doctorid.getText() + "',totaldays='" + totaldays.getText()+
-                        "' WHERE rollno='"+roomid.getText()+"');");
-                Toast.makeText(AdmitRoomAssignActivity.this, "Record Modified", Toast.LENGTH_SHORT).show();
+            if(c.moveToFirst())
+            {
+                db.execSQL("DELETE FROM roomdata WHERE roomid='"+roomid.getText()+"'");
+                db.execSQL("INSERT INTO roomdata VALUES('" + roomid.getText() + "','" + patientid.getText() +
+                        "','" + doctorid.getText() + "','" + totaldays.getText() + "');");
+                Toast.makeText(AdmitRoomAssignActivity.this, "Record Updated", Toast.LENGTH_SHORT).show();
+
             }
             else {
                 Toast.makeText(AdmitRoomAssignActivity.this, "Invalid Room ID", Toast.LENGTH_SHORT).show();

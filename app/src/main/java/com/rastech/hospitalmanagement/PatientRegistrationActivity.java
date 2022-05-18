@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -49,6 +50,10 @@ public class PatientRegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String name = regName.getText().toString().trim();
+                int count =0;
+                Cursor c=db.rawQuery("SELECT * FROM PatientData", null);
+                count = c.getCount();
+                count+=1;
                 final String idNumber = regID.getText().toString().trim();
                 final String phone = regPhoneNumber.getText().toString().trim();
                 final String email = loginEmail.getText().toString().trim();
@@ -76,17 +81,26 @@ public class PatientRegistrationActivity extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(password)){
                     loginPassword.setError("Password is required");
-                     return;
+                    return;
                 }
 
                 else {
                     db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + regID.getText() +
                             "','" + regPhoneNumber.getText() + "','" + loginEmail.getText() + "','" + loginPassword.getText() + "');");
+                    showMessage("ID","Your Id is "+count);
                 }
                 Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
                 Toast.makeText(PatientRegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void showMessage(String title,String message)
+    {
+        Builder builder=new Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
     }
 }

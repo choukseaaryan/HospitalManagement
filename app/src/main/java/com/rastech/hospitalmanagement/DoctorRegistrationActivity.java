@@ -16,10 +16,12 @@ import android.app.AlertDialog.Builder;
 import android.database.Cursor;
 import android.widget.Toast;
 
+import java.util.UUID;
+
 public class DoctorRegistrationActivity extends AppCompatActivity implements  OnClickListener {
 
     private TextView alreadyHaveAccount;
-    Button regButton,View;
+    Button regButton,View,ViewAll;
     EditText Docname,docID,docdesig,loginEmail,loginPassword,regPhoneNumber;
     SQLiteDatabase db1;
 
@@ -37,6 +39,8 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         regButton.setOnClickListener(this);
         View = (Button)findViewById(R.id.viewbutton);
         View.setOnClickListener(this);
+        ViewAll = (Button)findViewById(R.id.viewallbutton);
+        ViewAll.setOnClickListener(this);
         db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname string,docID integer,docdesig string,loginEmail email,loginPassword string,regPhoneNumber integer);");
 
@@ -63,8 +67,13 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
                 Toast.makeText(DoctorRegistrationActivity.this, "Please enter all values", Toast.LENGTH_SHORT).show();
                 return;
             }
-            db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + docID.getText() + "','" + docdesig.getText() +
+            int count =0;
+            Cursor c=db1.rawQuery("SELECT * FROM Docdata", null);
+            count = c.getCount();
+            count+=1;
+            db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + count + "','" + docdesig.getText() +
                     "','" + loginEmail.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
+            showMessage("ID","Your Id is "+count);
             Toast.makeText(DoctorRegistrationActivity.this, "Record added", Toast.LENGTH_SHORT).show();
             clearText();
         }
@@ -91,15 +100,42 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
                 clearText();
             }
         }
+        if(view==ViewAll)
+        {
+            Cursor c=db1.rawQuery("SELECT * FROM Docdata", null);
+            if(c.getCount()==0)
+            {
+                showMessage("Error", "No records found");
+                return;
+            }
+            StringBuffer buffer=new StringBuffer();
+            while(c.moveToNext())
+            {
+                buffer.append("Docname: "+c.getString(0)+"\n");
+                buffer.append("DocId: "+c.getString(1)+"\n");
+                buffer.append("loginEmail: "+c.getString(3)+"\n");
+                buffer.append("LoginPassword: "+c.getString(4)+"\n\n");
+
+            }
+            showMessage("Doctor Details", buffer.toString());
+        }
     }
 
+    public void showMessage(String title,String message)
+    {
+        Builder builder=new Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
     public void clearText()
     {
-        Docname.setText("");
-        docID.setText("");
         docdesig.setText("");
+        docID.setText("");
+        Docname.setText("");
         loginEmail.setText("");
         loginPassword.setText("");
-        regPhoneNumber.setText("");
+        Docname.requestFocus();
     }
 }
