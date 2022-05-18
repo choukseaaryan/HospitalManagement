@@ -52,7 +52,9 @@ public class doctorloginActivity extends AppCompatActivity implements OnClickLis
                 return;
             }
             Toast.makeText(doctorloginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+            String str = loginEmail.getText().toString();
             Intent intent = new Intent(doctorloginActivity.this, DoctorPageActivity.class);
+            intent.putExtra("message_key", str);
             startActivity(intent);
             clearText();
         }}

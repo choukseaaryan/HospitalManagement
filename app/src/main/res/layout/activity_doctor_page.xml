@@ -32,9 +32,18 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
+        <!--Title-->
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <Button
-            android:id="@+id/doctorReg"
+            android:id="@+id/doctorprofile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -44,7 +53,7 @@
             android:textAllCaps="false"
             android:textSize="17sp" />
         <Button
-            android:id="@+id/assignRo"
+            android:id="@+id/schedule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
