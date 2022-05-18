@@ -69,28 +69,28 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--ID-->
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:theme="@style/TextInputLayoutStyle"
-            app:boxStrokeColor="#fff"
-            app:hintTextAppearance="@color/colorPrimary">
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:theme="@style/TextInputLayoutStyle"-->
+<!--            app:boxStrokeColor="#fff"-->
+<!--            app:hintTextAppearance="@color/colorPrimary">-->
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/regID"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_number"
-                android:drawablePadding="10dp"
-                android:hint="Enter Your ID"
-                android:inputType="number"
-                android:textColor="#000"
-                android:textColorHint="#000"
-                android:textSize="18sp" />
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/regID"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableStart="@drawable/ic_number"-->
+<!--                android:drawablePadding="10dp"-->
+<!--                android:hint="Enter Your ID"-->
+<!--                android:inputType="number"-->
+<!--                android:textColor="#000"-->
+<!--                android:textColorHint="#000"-->
+<!--                android:textSize="18sp" />-->
 
-        </com.google.android.material.textfield.TextInputLayout>
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <!--Email field-->
         <com.google.android.material.textfield.TextInputLayout

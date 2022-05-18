@@ -37,7 +37,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
         });
 
         regName = findViewById(R.id.regName);
-        regID = findViewById(R.id.regID);
+//        regID = findViewById(R.id.regID);
         regPhoneNumber = findViewById(R.id.regPhoneNumber);
         loginEmail = findViewById(R.id.loginEmail);
         loginPassword = findViewById(R.id.loginPassword);
@@ -50,11 +50,11 @@ public class PatientRegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String name = regName.getText().toString().trim();
-                int count =0;
+                int count = 0;
                 Cursor c=db.rawQuery("SELECT * FROM PatientData", null);
                 count = c.getCount();
-                count+=1;
-                final String idNumber = regID.getText().toString().trim();
+                count += 1;
+//                final String idNumber = regID.getText().toString().trim();
                 final String phone = regPhoneNumber.getText().toString().trim();
                 final String email = loginEmail.getText().toString().trim();
                 final String password = loginPassword.getText().toString().trim();
@@ -64,10 +64,10 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(TextUtils.isEmpty(idNumber)){
-                    regID.setError("ID is required");
-                    return;
-                }
+//                if(TextUtils.isEmpty(idNumber)){
+//                    regID.setError("ID is required");
+//                    return;
+//                }
 
                 if(TextUtils.isEmpty(phone)){
                     regPhoneNumber.setError("Phone Number is required");
@@ -85,9 +85,9 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 }
 
                 else {
-                    db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + regID.getText() +
+                    db.execSQL("INSERT INTO PatientData VALUES('" + regName.getText() + "','" + count +
                             "','" + regPhoneNumber.getText() + "','" + loginEmail.getText() + "','" + loginPassword.getText() + "');");
-                    showMessage("ID","Your Id is "+count);
+//                    showMessage("ID","Your Id is "+ count);
                 }
                 Intent intent = new Intent(PatientRegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
@@ -95,12 +95,12 @@ public class PatientRegistrationActivity extends AppCompatActivity {
             }
         });
     }
-    public void showMessage(String title,String message)
-    {
-        Builder builder=new Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }
+//    public void showMessage(String title,String message)
+//    {
+//        Builder builder=new Builder(this);
+//        builder.setCancelable(true);
+//        builder.setTitle(title);
+//        builder.setMessage(message);
+//        builder.show();
+//    }
 }
