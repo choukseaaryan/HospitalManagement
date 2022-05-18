@@ -34,117 +34,47 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/title7"
-            android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:gravity="center"
-            android:text="Patient Login"
-            android:textAllCaps="false"
-            android:textColor="#000"
-            android:textSize="17dp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-
             android:orientation="vertical">
 
-            <!--Email field-->
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/TextInputLayoutStyle"
-                app:boxStrokeColor="#fff"
-                app:hintTextAppearance="@color/colorPrimary">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/loginEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="emailAddress"
-                    android:drawableStart="@drawable/ic_mail"
-                    android:drawablePadding="10dp"
-                    android:hint="Enter your email"
-                    android:inputType="textEmailAddress"
-                    android:textColor="#000"
-                    android:textColorHint="#000"
-                    android:textSize="18sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--Password field-->
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:theme="@style/TextInputLayoutStyle"
-                app:boxStrokeColor="#fff"
-                app:hintTextAppearance="@color/colorPrimary">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/loginPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="password"
-                    android:drawableStart="@drawable/ic_lock"
-                    android:drawablePadding="10dp"
-                    android:hint="Enter password"
-                    android:inputType="textPassword"
-                    android:textColor="#000"
-                    android:textColorHint="#000"
-                    android:textSize="18sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!--Sign In Button-->
             <Button
-                android:id="@+id/loginButton"
-                android:layout_width="70pt"
+                android:id="@+id/patientLoginButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="80dp"
                 android:background="@drawable/button_background"
-                android:text="Sign In"
+                android:text="Patient Login"
                 android:textAllCaps="false" />
 
-            <!--Register link-->
-            <TextView
-                android:id="@+id/noAccountQuestion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="Don't have an account? Register here"
-                android:textAllCaps="false"
-                android:textColor="#000"
-                android:textSize="17dp" />
-            <!--Register link-->
-            <TextView
+            <Button
                 android:id="@+id/doctoraccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/button_background"
                 android:text="Doctor Login"
-                android:textAllCaps="false"
-                android:textColor="#000"
-                android:textSize="17dp" />
+                android:textAllCaps="false" />
+
+
 
             <!--Admin Login link-->
-            <TextView
+            <Button
                 android:id="@+id/loginAdmin"
                 android:layout_width="match_parent"
-                android:layout_height="57dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/button_background"
                 android:text="Admin Login"
-                android:textAllCaps="false"
-                android:textColor="#000"
-                android:textSize="17dp" />
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
