@@ -32,7 +32,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_registration);
         Docname = (EditText)findViewById(R.id.Docname);
-        docID = (EditText)findViewById(R.id.docID);
+//        docID = (EditText)findViewById(R.id.docID);
         docdesig = (EditText)findViewById(R.id.docdesig);
         loginEmail = (EditText)findViewById(R.id.loginEmail);
         loginPassword = (EditText)findViewById(R.id.loginPassword);
@@ -46,14 +46,14 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname string,docID integer,docdesig string,loginEmail email,loginPassword string,regPhoneNumber integer);");
 
-        alreadyHaveAccount = findViewById(R.id.alreadyHaveAccount);
-        alreadyHaveAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DoctorRegistrationActivity.this, doctorloginActivity.class);
-                startActivity(intent);
-            }
-        });
+//        alreadyHaveAccount = findViewById(R.id.alreadyHaveAccount);
+//        alreadyHaveAccount.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(DoctorRegistrationActivity.this, doctorloginActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         }
     public void onClick(View view){
@@ -61,7 +61,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
         if (view == regButton) {
             // Checking for empty fields
             if (Docname.getText().toString().trim().length() == 0 ||
-                    docID.getText().toString().trim().length() == 0 ||
+//                    docID.getText().toString().trim().length() == 0 ||
                     docdesig.getText().toString().trim().length() == 0 ||
                     loginEmail.getText().toString().trim().length() == 0 ||
                     loginPassword.getText().toString().trim().length() == 0 ||
@@ -69,13 +69,13 @@ public class DoctorRegistrationActivity extends AppCompatActivity implements  On
                 Toast.makeText(DoctorRegistrationActivity.this, "Please enter all values", Toast.LENGTH_SHORT).show();
                 return;
             }
-            int count =0;
+            int count = 0;
             Cursor c=db1.rawQuery("SELECT * FROM Docdata", null);
             count = c.getCount();
             count+=1;
             db1.execSQL("INSERT INTO Docdata VALUES('" + Docname.getText() + "','" + count + "','" + docdesig.getText() +
                     "','" + loginEmail.getText() + "','" + loginPassword.getText() + "','" + regPhoneNumber.getText() + "');");
-            showMessage("ID","Your Id is "+count);
+            showMessage("ID","Your Id is "+ count);
             Toast.makeText(DoctorRegistrationActivity.this, "Record added", Toast.LENGTH_SHORT).show();
             clearText();
         }
