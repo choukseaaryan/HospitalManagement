@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class adminActivity extends AppCompatActivity {
 
     private Button doctorReg, assignRo, patientDataButton, searchDoc, doctorDataButton;
-    SQLiteDatabase db, db1;
+    SQLiteDatabase db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,10 +46,10 @@ public class adminActivity extends AppCompatActivity {
         doctorDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
-                db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname string,docID integer,docdesig string,loginEmail email,loginPassword string,regPhoneNumber integer);");
+                db=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
+                db.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname string,docID integer,docdesig string,loginEmail email,loginPassword string,regPhoneNumber integer);");
 
-                Cursor c=db1.rawQuery("SELECT * FROM Docdata", null);
+                Cursor c=db.rawQuery("SELECT * FROM Docdata", null);
                 if(c.getCount()==0)
                 {
                     showMessage("Error", "No records found");

@@ -23,6 +23,7 @@ public class DoctorPageActivity extends AppCompatActivity implements View.OnClic
     TextView useremail;
     SQLiteDatabase db1;
     String Data="";
+    String str1="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class DoctorPageActivity extends AppCompatActivity implements View.OnClic
         useremail = (TextView)findViewById(R.id.user);
         Intent intent = getIntent();
         String str = intent.getStringExtra("message_key");
-        useremail.setText("Welcome, " +str);
+        useremail.setText("Welcome, Doctor");
         Data = str;
         doctorprofile = (Button)findViewById(R.id.doctorprofile);
         doctorprofile.setOnClickListener(this);
@@ -64,19 +65,10 @@ public class DoctorPageActivity extends AppCompatActivity implements View.OnClic
         }
     public void showMessage(String title,String message)
     {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        Builder builder=new Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);
         builder.setMessage(message);
-        if(!message.equals("No records found")) {
-            builder.setPositiveButton("Delete Data", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    db1.execSQL("DELETE FROM Docdata");
-                    Toast.makeText(DoctorPageActivity.this, "Your Profile", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
         builder.show();
     }
     }
