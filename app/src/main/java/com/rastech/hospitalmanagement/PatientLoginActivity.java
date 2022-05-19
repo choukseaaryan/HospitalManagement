@@ -47,7 +47,7 @@ public class PatientLoginActivity extends AppCompatActivity {
                 }
                 if(c.getCount()==0 || !loginEmail.getText().toString().equals(s1) ||!loginpassword.getText().toString().equals(s2) )
                 {
-                    Toast.makeText(PatientLoginActivity.this, "No record found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PatientLoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Toast.makeText(PatientLoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
@@ -61,7 +61,7 @@ public class PatientLoginActivity extends AppCompatActivity {
         noAccountQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PatientLoginActivity.this, RegistrationActivity.class);
+                Intent intent = new Intent(PatientLoginActivity.this, PatientRegistrationActivity.class);
                 startActivity(intent);
             }
         });
