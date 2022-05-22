@@ -66,7 +66,7 @@ public class adminActivity extends AppCompatActivity {
                     buffer.append("Phone Number: "+c.getString(5)+"\n\n");
 
                 }
-                showMessage("Doctor Data", buffer.toString());
+                showMessage1("Doctor Data", buffer.toString());
             }
         });
 
@@ -119,6 +119,23 @@ public class adminActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     db.execSQL("DELETE FROM PatientData");
+                    Toast.makeText(adminActivity.this, "Record Deleted", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        builder.show();
+    }
+    public void showMessage1(String title,String message)
+    {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        if(!message.equals("No records found")) {
+            builder.setPositiveButton("Delete All", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    db.execSQL("DELETE FROM Docdata");
                     Toast.makeText(adminActivity.this, "Record Deleted", Toast.LENGTH_SHORT).show();
                 }
             });
