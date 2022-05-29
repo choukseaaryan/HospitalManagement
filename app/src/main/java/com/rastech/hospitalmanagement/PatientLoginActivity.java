@@ -51,7 +51,10 @@ public class PatientLoginActivity extends AppCompatActivity {
                     return;
                 }
                 Toast.makeText(PatientLoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+
+                String str = loginEmail.getText().toString();
                 Intent intent = new Intent(PatientLoginActivity.this, PatientPageActivity.class);
+                intent.putExtra("message_key", str);
                 startActivity(intent);
                 clearText();
             }
