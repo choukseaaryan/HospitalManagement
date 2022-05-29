@@ -33,60 +33,71 @@
         android:textSize="25sp"
         android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/searchDoc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_background"
-            android:text="Get Details Of A Doctor"
-            android:textAllCaps="false"
-            android:textSize="17sp" />
+    <TextView
+        android:id="@+id/adminTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Admin Page"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/doctorReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_background"
-            android:text="@string/doc_reg"
-            android:textAllCaps="false"
-            android:textSize="17sp" />
+    <Button
+        android:id="@+id/searchDoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="Get Details Of A Doctor"
+        android:textAllCaps="false"
+        android:textSize="17sp" />
 
-        <Button
-            android:id="@+id/doctorDataButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_background"
-            android:text="Doctor Data"
-            android:textAllCaps="false"
-            android:textSize="17sp" />
+    <Button
+        android:id="@+id/doctorReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="@string/doc_reg"
+        android:textAllCaps="false"
+        android:textSize="17sp" />
 
-        <Button
-            android:id="@+id/patientDataButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_background"
-            android:text="Patient Data"
-            android:textAllCaps="false"
-            android:textSize="17sp" />
+    <Button
+        android:id="@+id/doctorDataButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="Doctor Data"
+        android:textAllCaps="false"
+        android:textSize="17sp" />
 
-        <Button
-            android:id="@+id/assignRo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/button_background"
-            android:text="Assign Room"
-            android:textAllCaps="false"
-            android:textSize="17sp" />
+    <Button
+        android:id="@+id/patientDataButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="Patient Data"
+        android:textAllCaps="false"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/assignRo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="Assign Room"
+        android:textAllCaps="false"
+        android:textSize="17sp" />
     </LinearLayout>
 
 </ScrollView>
