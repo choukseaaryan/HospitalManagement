@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class DoctorPageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button doctorprofile,schedule,appointmentdone;
+    Button doctorprofile,schedule;
     TextView useremail;
     SQLiteDatabase db1;
     String Data="";
@@ -35,23 +35,9 @@ public class DoctorPageActivity extends AppCompatActivity implements View.OnClic
         Data = str;
         doctorprofile = (Button)findViewById(R.id.doctorprofile);
         doctorprofile.setOnClickListener(this);
-        schedule = (Button)findViewById(R.id.schedule);
-        schedule.setOnClickListener(this);
-        appointmentdone = (Button)findViewById(R.id.appointmentdone);
-        appointmentdone.setOnClickListener(this);
         db1=openOrCreateDatabase("MyHospital", Context.MODE_PRIVATE, null);
         db1.execSQL("CREATE TABLE IF NOT EXISTS Docdata(Docname string,docID integer,docdesig string,loginEmail email,loginPassword string,regPhoneNumber integer);");
-        db1.execSQL("CREATE TABLE IF NOT EXISTS appointments(patientid integer);");
-        appointmentdone = findViewById(R.id.appointmentdone);
-        appointmentdone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String str1 = str;
-                Intent intent = new Intent(DoctorPageActivity.this, DeleteAppointment.class);
-                intent.putExtra("message_key", str);
-                startActivity(intent);
-            }
-        });
+
     }
     public void onClick(View view) {
 
@@ -74,21 +60,6 @@ public class DoctorPageActivity extends AppCompatActivity implements View.OnClic
 
             }
             showMessage("Doctor Data", buffer.toString());
-        }
-        if(view == schedule)
-        {
-            Cursor c1=db1.rawQuery("SELECT * FROM appointments ", null);
-            if(c1.getCount()==0)
-            {
-                showMessage("Schedule", "No Schedule found");
-                return;
-            }
-            StringBuffer buffer=new StringBuffer();
-            while(c1.moveToNext())
-            {
-                buffer.append("Patient Email: "+c1.getString(0)+"\n");
-            }
-            showMessage("Scheduled Patient Data", buffer.toString());
         }
 
         }
